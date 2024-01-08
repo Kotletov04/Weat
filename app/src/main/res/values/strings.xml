@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_wend">m/s</string>
+    <string name="name_davl">mm Hg</string>
+    <string name="name_morning">MORNING</string>
+    <string name="name_day">DAY</string>
+    <string name="name_evening">EVENING</string>
+    <string name="name_home">Main</string>
+    <string name="name_temp">Temperature</string>
+
+
+
+</resources>

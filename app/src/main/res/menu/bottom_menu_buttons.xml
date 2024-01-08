@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/home_button"
+        android:title="@string/name_home"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/temp_button"
+        android:title="@string/name_temp"
+        android:icon="@drawable/thermometer" />
+
+</menu>

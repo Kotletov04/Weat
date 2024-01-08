@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomePageFragment"
+    android:background="@drawable/background_day"
+    android:id="@+id/home_page">
+
+    <!--<TextView
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/last_temp"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:text="-23°"
+        android:textAlignment="textEnd"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/temp"
+        app:layout_constraintRight_toLeftOf="@id/temp"
+        />
+
+    <TextView
+        android:id="@+id/last_temp_name"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="Вечером"
+        android:textSize="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/last_temp"
+        app:layout_constraintRight_toRightOf="@id/last_temp"
+        />
+
+    <TextView
+        android:id="@+id/second_temp"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:text="-53°"
+        android:textAlignment="textEnd"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/last_temp_name"
+        app:layout_constraintRight_toRightOf="@id/last_temp_name"
+        />
+
+    <TextView
+        android:id="@+id/second_temp_name"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="Днём"
+        android:textSize="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/second_temp"
+        app:layout_constraintRight_toRightOf="@id/last_temp"
+        />
+-->
+
+
+
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:textAlignment="center"
+        android:text="2°"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/white"
+        android:textSize="100dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/name_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nizhniy Novgorod"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/temp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/icon_weather"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/snow_13"
+        app:layout_constraintRight_toRightOf="@id/temp"
+        app:layout_constraintBottom_toBottomOf="@id/temp"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/temp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintRight_toRightOf="@id/temp"
+        app:layout_constraintLeft_toLeftOf="@id/temp">
+        <TableRow android:padding="2dp">
+            <ImageView
+
+                android:layout_width="10dp"
+                android:layout_height="20dp"
+                android:src="@drawable/wind_icon"/>
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2,2м/с,В"
+                android:textColor="@color/white"
+                android:id="@+id/wind"/>
+        </TableRow>
+        <TableRow android:padding="2dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/water_icon"/>
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80%"
+                android:textColor="@color/white"
+                android:id="@+id/water"/>
+        </TableRow>
+        <TableRow android:padding="2dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/barometer_icon"/>
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="771 мм рт. ст."
+                android:textColor="@color/white"
+                android:id="@+id/barometer"/>
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_wend">м/с</string>
+    <string name="name_davl">мм рт. ст.</string>
+    <string name="name_morning">УТРОМ</string>
+    <string name="name_day">ДНЁМ</string>
+    <string name="name_evening">ВЕЧЕРОМ</string>
+    <string name="name_home">Главная</string>
+    <string name="name_temp">Температура</string>
+</resources>

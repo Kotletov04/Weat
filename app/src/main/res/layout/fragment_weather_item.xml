@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="270dp"
+        android:layout_height="120dp"
+        android:layout_gravity="right"
+        android:background="#5AACEC">
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/snow_two_page" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/pine_tree" />
+
+
+        <ImageView
+            android:id="@+id/razd"
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:background="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/weather_one"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignRight="@id/temp_one"
+            android:layout_alignBottom="@id/temp_one"
+            android:layout_marginEnd="38dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/snow_two_page" />
+
+        <ImageView
+            android:id="@+id/weather_two"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignRight="@id/temp_two"
+            android:layout_alignBottom="@id/temp_two"
+            android:layout_marginEnd="38dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/cloud_03" />
+
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/two"
+            android:layout_marginEnd="30dp"
+            android:layout_toStartOf="@id/two"
+            android:fontFamily="sans-serif-condensed"
+            android:text="ДНЁМ"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/razd"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="ВЕЧЕРОМ"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/temp_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/one"
+            android:layout_alignRight="@id/one"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="-23°"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/temp_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/two"
+            android:layout_alignRight="@id/two"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="-29°"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/temp_zero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="80dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="-13°"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/razd"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="19 декабря"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
