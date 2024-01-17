@@ -3,33 +3,11 @@ package com.example.testapp.Other;
 
 import static android.icu.lang.UCharacter.toUpperCase;
 
-import android.content.Context;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.widget.TextView;
-
-import com.example.testapp.Api.CreateApi;
-import com.example.testapp.Model.CurrentWeather.Post;
-import com.example.testapp.Model.FiveDays.Common.ListDays;
-import com.example.testapp.Model.FiveDays.PostFiveDays;
-import com.example.testapp.R;
-
-import java.lang.reflect.Array;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 
 
 public class Season {
@@ -113,10 +91,6 @@ public class Season {
 
     }
 
-    public static void main(String[] args) {
-        Location loc = new Location();
-        System.out.println(loc.getLAT());
-    }
 
 
 

@@ -1,16 +1,9 @@
-package com.example.testapp.Fragments;
+package com.example.testapp.Ui;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.location.LocationManager;
 import android.os.Bundle;
 
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
@@ -20,11 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.testapp.Api.CreateApi;
+import com.example.testapp.Other.CreateApi;
 import com.example.testapp.Model.CurrentWeather.Post;
 import com.example.testapp.Other.Constants;
 
-import com.example.testapp.Other.Location;
 import com.example.testapp.R;
 
 import retrofit2.Call;
@@ -36,7 +28,6 @@ public class HomePageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         View view = inflater.inflate(R.layout.fragment_home_page, container, false);
 
 
@@ -44,8 +35,6 @@ public class HomePageFragment extends Fragment {
                 "Nizhniy Novgorod",
                 "metric",
                 Constants.KEY).enqueue(new Callback<Post>() {
-
-
             @Override
             public void onResponse(Call<Post> call, retrofit2.Response<com.example.testapp.Model.CurrentWeather.Post> response) {
                 com.example.testapp.Model.CurrentWeather.Post posts = response.body();
@@ -126,22 +115,11 @@ public class HomePageFragment extends Fragment {
             }
 
         });
-        
-        Context mContext = getActivity().getApplicationContext();
 
 
 
-        LocationManager locationManager;
-        String context = Context.LOCATION_SERVICE;
-
-
-        locationManager = (LocationManager) mContext.getSystemService(context);
-
-        String provider = LocationManager.GPS_PROVIDER;
-
-        @SuppressLint("MissingPermission")
-        android.location.Location location = locationManager.getLastKnownLocation(provider);
-        System.out.println(location.getLongitude());
         return view;
     }
+
+
 }

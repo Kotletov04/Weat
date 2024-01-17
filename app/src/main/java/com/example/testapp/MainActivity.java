@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -14,37 +13,27 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 
-import com.example.testapp.Api.CreateApi;
-import com.example.testapp.Fragments.HomePageFragment;
-import com.example.testapp.Fragments.TempFragment;
+import com.example.testapp.Ui.HomePageFragment;
+import com.example.testapp.Ui.TempFragment;
 
-import com.example.testapp.Model.FiveDays.Common.Sys;
-
-import com.example.testapp.Other.Location;
 import com.example.testapp.Other.Season;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.io.File;
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
+import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LocationListener {
     ViewPager2 pagerMain;
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     Season season = new Season();
@@ -54,14 +43,60 @@ public class MainActivity extends AppCompatActivity {
     TempFragment tempFragment = new TempFragment();
 
 
+    @SuppressLint("MissingPermission")
+    private void getLocation() {
+        LocationManager locationManager = (LocationManager) this.getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, MainActivity.this);
+
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+        getLocation();
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull List<Location> locations) {
+        LocationListener.super.onLocationChanged(locations);
+    }
+
+    @Override
+    public void onFlushComplete(int requestCode) {
+        LocationListener.super.onFlushComplete(requestCode);
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        LocationListener.super.onStatusChanged(provider, status, extras);
+    }
+
+    @Override
+    public void onProviderEnabled(@NonNull String provider) {
+        LocationListener.super.onProviderEnabled(provider);
+    }
+
+    @Override
+    public void onProviderDisabled(@NonNull String provider) {
+        LocationListener.super.onProviderDisabled(provider);
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
-
         setContentView(R.layout.activity_main);
-        super.onCreate(savedInstanceState);
+
+        if (ContextCompat.checkSelfPermission(
+                MainActivity.this,
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+            }, 100);
+        }
+
+
 
 
 
@@ -120,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        super.onCreate(savedInstanceState);
     }
+
+
 
 }

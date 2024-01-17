@@ -1,6 +1,5 @@
-package com.example.testapp.Fragments;
+package com.example.testapp.Ui;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,19 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.testapp.Api.CreateApi;
+import com.example.testapp.Other.CreateApi;
 import com.example.testapp.Model.FiveDays.PostFiveDays;
 import com.example.testapp.Other.Constants;
-import com.example.testapp.Other.Location;
 import com.example.testapp.Other.Season;
 import com.example.testapp.R;
 
-import org.w3c.dom.Text;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -57,7 +51,7 @@ public class TempFragment extends Fragment {
         CreateApi.getInstance().getApi().getJsonFiveDays(
                 "Nizhniy Novgorod",
                 "metric",
-                "230d16c7bb47e501c6495c9b41ec7680").enqueue(new Callback<PostFiveDays>() {
+                Constants.KEY).enqueue(new Callback<PostFiveDays>() {
             @Override
             public void onResponse(Call<PostFiveDays> call, Response<PostFiveDays> response) {
 
@@ -132,6 +126,8 @@ public class TempFragment extends Fragment {
                 temp_one_el_three.setText(String.valueOf(Math.round(list_threeday.get(6))) + "°");
                 TextView temp_two_el_three = view.findViewById(R.id.temp_zero_el_three);
                 temp_two_el_three.setText(String.valueOf(Math.round(list_threeday.get(3))) + "°");
+
+
 
             }
 
